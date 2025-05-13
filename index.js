@@ -1,10 +1,12 @@
+require('dotenv').config();
+
 const express = require('express'); // import express
 const mongoose = require('mongoose');
 
 const app = express();              // create an Express app
 const PORT = 3000;                  // define the port
 
-mongoose.connect('mongodb+srv://admin:Cauchyisrea11yHolder@cluster0.jwgdto9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect(process.env.PASSWORD_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
